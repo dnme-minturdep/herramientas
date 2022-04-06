@@ -4,7 +4,7 @@
 \alias{limpiar_texto}
 \title{Limpieza general de texto:}
 \usage{
-limpiar_texto(texto, enie = T)
+limpiar_texto(texto, enie = TRUE)
 }
 \arguments{
 \item{texto}{variable de clase 'character' a la que se le quiere aplicar la función}
@@ -17,5 +17,5 @@ También aplica opcionalmente str_replace_all() convertir "ñ" en "n" (por defau
 }
 \examples{
 limpiar_texto("TéxTÔ con una Ñ?!")
-limpiar_texto("TéxTÔ con una Ñ?!", enie = F)
+limpiar_texto("TéxTÔ con una Ñ?!", enie = FALSE)
 }

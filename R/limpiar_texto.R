@@ -7,9 +7,9 @@
 #' @param enie valor lógico (TRUE o FALSE) indicando si reemplazar "ñ" por "n"
 #' @examples
 #' limpiar_texto("TéxTÔ con una Ñ?!")
-#' limpiar_texto("TéxTÔ con una Ñ?!", enie = F)
+#' limpiar_texto("TéxTÔ con una Ñ?!", enie = FALSE)
 #'@export
-limpiar_texto <- function(texto, enie = T){
+limpiar_texto <- function(texto, enie = TRUE){
   if (enie) {
     remover_tildes(
       stringr::str_replace_all(
