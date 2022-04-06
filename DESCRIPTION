@@ -1,12 +1,20 @@
 Package: herramientas
-Title: What the Package Does (One Line, Title Case)
+Title: Conjunto de funciones para el procesamiento de datos en la DNMyE
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Authors@R: c(
+    person("Pablo", "Tiscornia", , "ptiscornia@turismo.gob.ar", role = c("aut", "cre")),
+    person("Juan Pablo", "Ruiz Nicolini", , "jruiznicolini@turismo.gob.ar", role = "aut",
+           comment = c(ORCID = "0000-0002-3138-6343")),
+    person("Dirección Nacional de Mercados y Estadísticas", "Ministerio de Turismo y Deportes", , "estadisticas@turismo.gob.ar", role = "cph")
+  )
+Description: Caja de herramientas para el procesamiento de datos en la
+    Dirección Nacional de Mercados y Estadísticas del Ministerio de
+    Turismo y Deportes de la Nación.
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Imports: 
+    mgsub
+Depends: 
+    R (>= 2.10)
