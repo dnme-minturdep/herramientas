@@ -1,4 +1,4 @@
-#' Limpieza general de texto:
+#' Tasa de variación:
 #' @description
 #' Calcula la tasa de variación con respecto al período previo según se defina, aplicando dplyr::lag()
 #' @param variable variable numérica para calcular la variación
@@ -8,27 +8,28 @@
 #' @param presentacion resultado en formato character con separador de decimales y miles usuales
 #' tasa_varaicion(c(10,10,10,10))
 #' tasa_variacion(c(10,10,10,10),periodo = trimestral)
+#'
 #'@export
 tasa_variacion <- function(variable,periodo = "anual",
                            porcentaje = FALSE,
                            presentacion = FALSE){
     if (periodo == "anual") {
     variacion <- variable/dplyr::lag(variable,1)-1
-  } 
+  }
   else if (periodo == "trimestral"){
     variacion <-  variable/dplyr::lag(variable,4)-1
   }
   else if (periodo == "mensual"){
     variacion <-  variable/dplyr::lag(variable,12)-1
-    
+
   }
   else {
     variacion <- variable/dplyr::lag(variable,periodo)-1}
-  
+
   if (porcentaje == T){
     variacion <- 100*variacion
   }
-  
+
   if (presentacion == T & porcentaje == F){
     return(paste0(format(round(variacion*100,1),decimal.mark = ",", big.mark="."),"%"))
   }
@@ -36,5 +37,5 @@ tasa_variacion <- function(variable,periodo = "anual",
     return(paste0(format(round(variacion,1),decimal.mark = ",", big.mark="."),"%"))
   }
     return(variacion)
-  
+
 }

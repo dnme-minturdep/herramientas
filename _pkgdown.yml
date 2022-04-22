@@ -1,0 +1,29 @@
+url: https://dnme-minturdep.github.io/herramientas/
+template:
+  bootstrap: 5
+  bslib:
+    bg: "white"
+    fg: "black"
+    primary:  "#37BBED"
+    base_font: {google: "Roboto"}
+    heading_font: {google: "Encode Sans"}
+    code_font: {google: "JetBrains Mono"}
+navbar:
+  bg: primary
+authors:
+  Dirección Nacional de Mercados y Estadísticas Ministerio de Turismo y Deportes:
+    href: "https://www.yvera.tur.ar/sinta/"
+    html: "<img src='https://bitacora.yvera.tur.ar/posts/bienvenida/sinta.png' width=72>"
+  Juan Pablo Ruiz Nicolini:
+     href: "https://tuqmano.ar"
+  sidebar:
+    roles: [cre, aut, cph]
+    text: "Desarrollado por"
+  footer:
+    roles: [cph]
+    before: "Desarrollo de la Dirección Nacional de Mercados y Estadísticas para el"
+home:
+  links:
+  - text: Sistema de Información Turística de la Argentina
+    href: https://www.yvera.tur.ar/sinta/
+
