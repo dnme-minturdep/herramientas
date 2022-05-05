@@ -1,9 +1,11 @@
 
 #' Limpieza general de tildes:
 #' @description
-#' Elimina tildes las vocales y la letra "y". Ej.: "ÿúòâ" en "yuoa".
+#' Elimina tildes y dieresis de las vocales y la letra "y". Ej.: "ÿúòâ" en "yuoa".
 #'
 #' @param texto variable de clase 'character' a la que se le quiere aplicar la función
+#' @examples
+#' remover_tildes("ÿúòâ") #"yuoa"
 #'
 #'@export
 remover_tildes <- function(texto) {
