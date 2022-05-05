@@ -5,9 +5,11 @@
 #' También aplica opcionalmente str_replace_all() convertir "ñ" en "n" (por default se aplica). Ej.:
 #' @param texto variable de clase 'character' a la que se le quiere aplicar la función
 #' @param enie valor lógico (TRUE o FALSE) indicando si reemplazar "ñ" por "n"
+#'
 #' @examples
-#' limpiar_texto("TéxTÔ con una Ñ?!")
-#' limpiar_texto("TéxTÔ con una Ñ?!", enie = FALSE)
+#' limpiar_texto("TéxTÔ con una Ñ?!") #"texto con una n"
+#' limpiar_texto("TéxTÔ con una Ñ?!", enie = FALSE) #"texto con una ñ"
+#'
 #'@export
 limpiar_texto <- function(texto, enie = TRUE){
   if (enie) {
