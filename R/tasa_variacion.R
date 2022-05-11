@@ -2,7 +2,7 @@
 #' @description
 #' Calcula la tasa de variación con respecto al período previo según se defina, aplicando dplyr::lag()
 #' @param variable variable numérica para calcular la variación
-#' @param período indicar cuántos períodos para atrás se calcula. Por defecto es anual (1 período),
+#' @param periodo indicar cuántos períodos para atrás se calcula. Por defecto es anual (1 período),
 #' puede elegirse "mensual" o "trimestral" o directamente el número (12 para mensual por ej.)
 #' @param porcentaje variación en términos porcentuales (multiplica por 100)
 #' @param presentacion resultado en formato character con separador de decimales y miles usuales

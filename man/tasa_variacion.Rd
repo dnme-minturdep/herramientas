@@ -20,7 +20,7 @@ tasa_variacion(
 tasa_varaicion(c(10,10,10,10))
 tasa_variacion(c(10,10,10,10),periodo = trimestral)}
 
-\item{período}{indicar cuántos períodos para atrás se calcula. Por defecto es anual (1 período),
+\item{periodo}{indicar cuántos períodos para atrás se calcula. Por defecto es anual (1 período),
 puede elegirse "mensual" o "trimestral" o directamente el número (12 para mensual por ej.)}
 }
 \description{
