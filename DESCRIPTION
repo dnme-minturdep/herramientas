@@ -19,7 +19,10 @@ Imports:
     mgsub,
     stringr,
     tibble, 
-    dplyr
+    dplyr,
+    RCurl,
+    haven,
+    usethis
 Depends: 
     R (>= 2.10)
 Suggests: 
