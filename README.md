@@ -35,6 +35,14 @@ devtools::install_github("d4t4tur/herramientas")
 
 -   **`tasa_variacion()`**: Calcula la tasa de variación con respecto al
     período previo según se defina.
+    
+-   **`set_user_srv()`:**  Guía para la configuración de las credenciales en .Renviron
+
+-   **`archivo_plano_srv()`** Devuelve las lineas de una archivo plano en el server, es para usar junto a `read.csv()` y otras funciones de lectura de archivos plano
+
+-   **`read_rds_srv()` y `read_sav_srv()`:** Leen especificamente esos tipo de archivos mediante `gzcon()` y `getBinaryURL()`
+
+    
 
 ## Modo de uso
 
