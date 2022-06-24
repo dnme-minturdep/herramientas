@@ -13,6 +13,9 @@
     <loc>https://dnme-minturdep.github.io/herramientas/index.html</loc>
   </url>
   <url>
+    <loc>https://dnme-minturdep.github.io/herramientas/reference/archivo_plano_srv.html</loc>
+  </url>
+  <url>
     <loc>https://dnme-minturdep.github.io/herramientas/reference/grapes-out-grapes.html</loc>
   </url>
   <url>
@@ -22,10 +25,22 @@
     <loc>https://dnme-minturdep.github.io/herramientas/reference/limpiar_texto.html</loc>
   </url>
   <url>
+    <loc>https://dnme-minturdep.github.io/herramientas/reference/ls_srv.html</loc>
+  </url>
+  <url>
     <loc>https://dnme-minturdep.github.io/herramientas/reference/numeros_en_palabras.html</loc>
   </url>
   <url>
+    <loc>https://dnme-minturdep.github.io/herramientas/reference/read_rds_srv.html</loc>
+  </url>
+  <url>
+    <loc>https://dnme-minturdep.github.io/herramientas/reference/read_sav_srv.html</loc>
+  </url>
+  <url>
     <loc>https://dnme-minturdep.github.io/herramientas/reference/remover_tildes.html</loc>
+  </url>
+  <url>
+    <loc>https://dnme-minturdep.github.io/herramientas/reference/set_user_srv.html</loc>
   </url>
   <url>
     <loc>https://dnme-minturdep.github.io/herramientas/reference/tasa_variacion.html</loc>
