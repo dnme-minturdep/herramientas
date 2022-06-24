@@ -14,3 +14,8 @@ numeros_en_palabras(texto, intervalo = 0:100)
 \description{
 Transforma digitos del 0 al 100 en palabras. Ej.: "1" en "uno", "25" en "veinticinco".
 }
+\examples{
+numeros_en_palabras("25 de mayo") #"veinticinco de mayo"
+numeros_en_palabras("6 de abril del 98") #"seis de abril del noventa y ocho"
+
+}

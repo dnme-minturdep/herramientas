@@ -14,14 +14,14 @@ tasa_variacion(
 \arguments{
 \item{variable}{variable numérica para calcular la variación}
 
+\item{periodo}{indicar cuántos períodos para atrás se calcula. Por defecto es anual (1 período),
+puede elegirse "mensual" o "trimestral" o directamente el número (12 para mensual por ej.)}
+
 \item{porcentaje}{variación en términos porcentuales (multiplica por 100)}
 
 \item{presentacion}{resultado en formato character con separador de decimales y miles usuales
 tasa_varaicion(c(10,10,10,10))
 tasa_variacion(c(10,10,10,10),periodo = trimestral)}
-
-\item{periodo}{indicar cuántos períodos para atrás se calcula. Por defecto es anual (1 período),
-puede elegirse "mensual" o "trimestral" o directamente el número (12 para mensual por ej.)}
 }
 \description{
 Calcula la tasa de variación con respecto al período previo según se defina, aplicando dplyr::lag()

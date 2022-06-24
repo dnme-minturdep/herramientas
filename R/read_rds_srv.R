@@ -3,8 +3,7 @@
 #' Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y lee el archivo RDS con readRDS().
 #'
 #' @param ruta Texto con la ruta específica del archivo a leer (ej.: "aerocomercial/anac/base_anac_agrupada.rds")
-#' @examples
-#' read_rds_srv(ruta = "aerocomercial/anac/base_anac_agrupada.rds")
+#'
 #'
 #'@export
 #'

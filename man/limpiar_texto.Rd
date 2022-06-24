@@ -16,6 +16,7 @@ Aplica tolower(), str_replace_all() para quitar caracteres especiales y remover_
 También aplica opcionalmente str_replace_all() convertir "ñ" en "n" (por default se aplica). Ej.:
 }
 \examples{
-limpiar_texto("TéxTÔ con una Ñ?!")
-limpiar_texto("TéxTÔ con una Ñ?!", enie = FALSE)
+limpiar_texto("TéxTÔ con una Ñ?!") #"texto con una n"
+limpiar_texto("TéxTÔ con una Ñ?!", enie = FALSE) #"texto con una ñ"
+
 }
