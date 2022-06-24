@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# {herramientas} <a href="https://dnme-minturdep.github.io/herramientas/"><img src="man/figures/logo.png" align="right" height="120" /></a>
+# {herramientas} <a href="https://dnme-minturdep.github.io/herramientas/"><img src="man/figures/logo.png" align="right" height="360" /></a>
 
 <!-- badges: start -->
 <!-- badges: end -->
