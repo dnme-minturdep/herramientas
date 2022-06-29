@@ -28,8 +28,8 @@ devtools::install_github("d4t4tur/herramientas")
 -   **`numeros_en_palabras()`**: Función que transforma dígitos del 0 al
     100 en palabras. Ej.: “1” en “uno”; “25” en “veinticinco”.
 
--   **`limpiar_texto()`**: Función que transforma dígitos del 0 al 100
-    en palabras. Ej.: “1” en “uno”; “25” en “veinticinco”.
+-   **`limpiar_texto()`**: Función que aplica limpieza general del
+    texto. Ej.: “TéxTÔ con una Ñ?!” en “texto con una n”.
 
 -   **`%out%`**: Valores no contenidos dentro de un conjunto.
 
