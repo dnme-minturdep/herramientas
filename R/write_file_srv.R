@@ -4,7 +4,7 @@
 #'
 #' @param x Objeto a escribir (ej: data.frame)
 #'
-#' @param ruta Texto con la ruta del archivo, incluyendo nombre y extensión del mismo. Ej: "aerocomercial/anac/base_final.csv")
+#' @param ruta Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv" y ".rds"). Ej: "aerocomercial/anac/base_final.csv")
 #'
 #'@export
 
