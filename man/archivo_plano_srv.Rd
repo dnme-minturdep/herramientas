@@ -12,10 +12,3 @@ archivo_plano_srv(ruta)
 \description{
 Hace una llamada getUrl a la ruta indicada dentro de /srv/DataDNMYE/. Usarlo con read_csv o read_csv2 u otros.
 }
-\examples{
-Devuelve las lineas del texto.
-archivo_plano_srv("turismo_internacional/termometro/perfiles_gasto.csv")
-Lee las lineas a un tibble.
-read_csv2(archivo_plano_srv("turismo_internacional/termometro/perfiles_gasto.csv"))
-
-}

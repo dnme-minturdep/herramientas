@@ -12,7 +12,3 @@ read_sav_srv(ruta)
 \description{
 Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y lee el archivo .sav con haven::read_sav().
 }
-\examples{
-read_sav_srv("evyth/microdatos/evyth_microdatos.sav")
-
-}
