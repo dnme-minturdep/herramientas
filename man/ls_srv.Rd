@@ -7,13 +7,8 @@
 ls_srv(ruta = NULL)
 }
 \arguments{
-\item{ruta}{Texto con la ruta específica del archivo a leer (ej.: "aerocomercial/anac/base_anac_agrupada.rds")}
+\item{ruta}{Texto con la ruta específica (ej.: "evyth/microdatos/")}
 }
 \description{
 Devuelve un vector con las ubicaciones en la ruta indicada dentro de /srv/DataDNMYE/.
-}
-\examples{
-ls_srv()
-ls_srv("peajes")
-
 }
