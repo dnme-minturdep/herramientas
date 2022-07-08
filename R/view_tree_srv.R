@@ -7,7 +7,12 @@
 
 view_tree_srv <- function() {
 
-  tree <- readr::read_delim(herramientas::archivo_plano_srv("tree.csv"), delim = "/")[,2]
+  ruta <- RCurl::getURL(url = paste0("sftp://",Sys.getenv("SRV_USER"),
+                             "@172.26.7.12/DataDNMYE/tree.csv"),
+                userpwd = paste0(Sys.getenv("SRV_USER"),":", Sys.getenv("SRV_CLAVE")),
+                dirlistonly = FALSE, .encoding = "UTF-8")
+
+  tree <- readr::read_delim(ruta, delim = "/")[,2]
 
   names(tree) <- "A"
 
