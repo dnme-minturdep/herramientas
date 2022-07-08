@@ -10,7 +10,7 @@
 
 write_file_srv <- function(x, ruta) {
 
-  check <- sub("^[^|]+\\/", "", ruta) %in% ls_srv(sub("/[^/]+$", "", ruta))
+  check <- sub("^[^|]+\\/", "", ruta) %in% herramientas::ls_srv(sub("/[^/]+$", "", ruta))
 
   if (check == TRUE) {
 

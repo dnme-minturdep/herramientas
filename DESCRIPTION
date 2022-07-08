@@ -24,7 +24,9 @@ Imports:
     haven,
     glue,
     readr,
-    usethis
+    usethis,
+    collapsibleTree,
+    tidyr
 Depends: 
     R (>= 2.10)
 Suggests: 
