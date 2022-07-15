@@ -12,7 +12,3 @@ read_rds_srv(ruta)
 \description{
 Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y lee el archivo RDS con readRDS().
 }
-\examples{
-read_rds_srv(ruta = "aerocomercial/anac/base_anac_agrupada.rds")
-
-}
