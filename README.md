@@ -45,6 +45,8 @@ devtools::install_github("d4t4tur/herramientas")
 
 -   **`read_rds_srv()` y `read_sav_srv()`:** Leen especificamente esos
     tipo de archivos mediante `gzcon()` y `getBinaryURL()`
+    
+-   **`write_file_srv`:** Hace una conexión a la ruta indicada dentro del servidor de la DNMyE y escribe un archivo .csv, .rds, .txt o .sav
 
 ## Modo de uso
 
