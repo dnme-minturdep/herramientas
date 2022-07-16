@@ -12,9 +12,13 @@ view_tree_srv <- function() {
                 userpwd = paste0(Sys.getenv("SRV_USER"),":", Sys.getenv("SRV_CLAVE")),
                 dirlistonly = FALSE, .encoding = "UTF-8")
 
-  tree <- readr::read_delim(ruta, delim = "/")[,2]
+  tree <- suppressWarnings(readr::read_delim(ruta, delim = "/",
+                            show_col_types = FALSE,
+                            col_names = c("x", "A"), progress = TRUE)[,2])
 
-  names(tree) <- "A"
+   tree <-  tidyr::drop_na(tree)
+
+ # names(tree) <- "A"
 
   tree <- tree[order(tree$A), ]
 
