@@ -26,4 +26,16 @@ home:
   links:
   - text: Sistema de Información Turística de la Argentina
     href: https://www.yvera.tur.ar/sinta/
+reference:
+  - title: "Limpieza"
+  desc: "Funciones auxiliares para la limpieza de datos"
+  contents:
+   - 'remover_tildes'
+   - 'numeros_en_palabras'
+   - 'limpiar_texto'
+   - 'out'
+  - title: "Manejo de archivos"
+  desc: "Funciones auxiliares para trabajar con archivos del servidor DNMyE"
+  contents:
+   - contains("srv")
 
