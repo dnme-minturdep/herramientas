@@ -82,17 +82,35 @@
 <div class="section level2">
 <h2 id="funciones">Funciones<a class="anchor" aria-label="anchor" href="#funciones"></a>
 </h2>
+<div class="section level3">
+<h3 id="limpieza">Limpieza<a class="anchor" aria-label="anchor" href="#limpieza"></a>
+</h3>
+<p><strong>Funciones auxiliares para la limpieza de datos</strong></p>
 <ul>
 <li><p><strong><code><a href="reference/remover_tildes.html">remover_tildes()</a></code></strong>: Función que elimina tildes de las vocales y la letra “y”. Ej.: “áéíóú” en “aeiou”</p></li>
 <li><p><strong><code><a href="reference/numeros_en_palabras.html">numeros_en_palabras()</a></code></strong>: Función que transforma dígitos del 0 al 100 en palabras. Ej.: “1” en “uno”; “25” en “veinticinco”.</p></li>
 <li><p><strong><code><a href="reference/limpiar_texto.html">limpiar_texto()</a></code></strong>: Función que aplica limpieza general del texto. Ej.: “TéxTÔ con una Ñ?!” en “texto con una n”.</p></li>
 <li><p><strong><code>%out%</code></strong>: Valores no contenidos dentro de un conjunto.</p></li>
-<li><p><strong><code><a href="reference/tasa_variacion.html">tasa_variacion()</a></code></strong>: Calcula la tasa de variación con respecto al período previo según se defina.</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="manejo-de-archivos">Manejo de Archivos<a class="anchor" aria-label="anchor" href="#manejo-de-archivos"></a>
+</h3>
+<p><strong>Funciones auxiliares para trabajar con archivos del servidor DNMyE</strong></p>
+<ul>
 <li><p><strong><code><a href="reference/set_user_srv.html">set_user_srv()</a></code>:</strong> Guía para la configuración de las credenciales en .Renviron</p></li>
 <li><p><strong><code><a href="reference/archivo_plano_srv.html">archivo_plano_srv()</a></code></strong> Devuelve las lineas de una archivo plano en el server, es para usar junto a <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv()</a></code> y otras funciones de lectura de archivos plano</p></li>
 <li><p><strong><code><a href="reference/read_rds_srv.html">read_rds_srv()</a></code> y <code><a href="reference/read_sav_srv.html">read_sav_srv()</a></code>:</strong> Leen especificamente esos tipo de archivos mediante <code><a href="https://rdrr.io/r/base/gzcon.html" class="external-link">gzcon()</a></code> y <code>getBinaryURL()</code></p></li>
 <li><p><strong><code><a href="reference/write_file_srv.html">write_file_srv()</a></code>:</strong> Hace una conexión a la ruta indicada dentro del servidor de la DNMyE y escribe un archivo .csv, .rds, .txt o .sav</p></li>
 </ul>
+</div>
+<div class="section level3">
+<h3 id="cálculos">Cálculos<a class="anchor" aria-label="anchor" href="#c%C3%A1lculos"></a>
+</h3>
+<p><strong>Cálculo de indicadores</strong></p>
+<ul><li>
+<strong><code><a href="reference/tasa_variacion.html">tasa_variacion()</a></code></strong>: Calcula la tasa de variación con respecto al período previo según se defina.</li></ul>
+</div>
 </div>
 <div class="section level2">
 <h2 id="modo-de-uso">Modo de uso<a class="anchor" aria-label="anchor" href="#modo-de-uso"></a>
@@ -151,6 +169,7 @@
 <li>Pablo Tiscornia <br><small class="roles"> Author, maintainer </small>  </li>
 <li>Juara Juan <br><small class="roles"> Author </small>  </li>
 <li>Juan Urricariet <br><small class="roles"> Author </small>  </li>
+<li>Elián Soutullo <br><small class="roles"> Author </small>  </li>
 <li>
 <a href="https://tuqmano.ar" class="external-link">Juan Pablo Ruiz Nicolini</a> <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-3138-6343" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>
