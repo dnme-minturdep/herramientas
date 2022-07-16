@@ -33,7 +33,7 @@ reference:
    - 'remover_tildes'
    - 'numeros_en_palabras'
    - 'limpiar_texto'
-   - 'out'
+   - '%out%'
 - title: "Manejo de archivos"
   desc: "Funciones auxiliares para trabajar con archivos del servidor DNMyE"
   contents:
