@@ -38,4 +38,8 @@ reference:
   desc: "Funciones auxiliares para trabajar con archivos del servidor DNMyE"
   contents:
    - contains("srv")
+- title: "Cálculos"
+  desc: "Funciones auxiliares para cálculo de indicadores"
+  contents:
+   - 'tasa_variacion'
 
