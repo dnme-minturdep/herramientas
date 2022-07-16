@@ -5,6 +5,7 @@ Authors@R: c(
     person("Pablo", "Tiscornia", , "ptiscornia@turismo.gob.ar", role = c("aut", "cre")),
     person("Juara", "Juan", , "jgjuara@turismo.gob.ar", role = c("aut")),
     person("Juan", "Urricariet", , "jurricariet@turismo.gob.ar", role = c("aut")),
+    person("Elián", "Soutullo", , "esoutullo@turismo.gob.ar", role = c("aut")),
     person("Juan Pablo", "Ruiz Nicolini", , "jruiznicolini@turismo.gob.ar", role = "aut",
            comment = c(ORCID = "0000-0002-3138-6343")),
     person("Dirección Nacional de Mercados y Estadísticas", "Ministerio de Turismo y Deportes", , "estadisticas@turismo.gob.ar", role = "cph")

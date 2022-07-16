@@ -22,6 +22,10 @@ devtools::install_github("d4t4tur/herramientas")
 
 ## Funciones
 
+### Limpieza
+
+**Funciones auxiliares para la limpieza de datos**
+
 -   **`remover_tildes()`**: Función que elimina tildes de las vocales y
     la letra “y”. Ej.: “áéíóú” en “aeiou”
 
@@ -33,8 +37,9 @@ devtools::install_github("d4t4tur/herramientas")
 
 -   **`%out%`**: Valores no contenidos dentro de un conjunto.
 
--   **`tasa_variacion()`**: Calcula la tasa de variación con respecto al
-    período previo según se defina.
+### Manejo de Archivos
+
+**Funciones auxiliares para trabajar con archivos del servidor DNMyE**
 
 -   **`set_user_srv()`:** Guía para la configuración de las credenciales
     en .Renviron
@@ -49,6 +54,13 @@ devtools::install_github("d4t4tur/herramientas")
 -   **`write_file_srv()`:** Hace una conexión a la ruta indicada dentro
     del servidor de la DNMyE y escribe un archivo .csv, .rds, .txt o
     .sav
+
+### Cálculos
+
+**Cálculo de indicadores**
+
+-   **`tasa_variacion()`**: Calcula la tasa de variación con respecto al
+    período previo según se defina.
 
 ## Modo de uso
 
