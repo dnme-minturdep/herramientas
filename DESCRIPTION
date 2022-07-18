@@ -3,7 +3,7 @@ Title: Conjunto de funciones para el procesamiento de datos en la DNMyE
 Version: 0.0.0.9
 Authors@R: c(
     person("Pablo", "Tiscornia", , "ptiscornia@turismo.gob.ar", role = c("aut", "cre")),
-    person("Juara", "Juan", , "jgjuara@turismo.gob.ar", role = c("aut")),
+    person("Juan", "Juara", , "jgjuara@turismo.gob.ar", role = c("aut")),
     person("Juan", "Urricariet", , "jurricariet@turismo.gob.ar", role = c("aut")),
     person("Elián", "Soutullo", , "esoutullo@turismo.gob.ar", role = c("aut")),
     person("Juan Pablo", "Ruiz Nicolini", , "jruiznicolini@turismo.gob.ar", role = "aut",
