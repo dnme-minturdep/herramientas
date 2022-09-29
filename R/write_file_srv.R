@@ -1,82 +1,130 @@
 #' Leer archivos rds del server:
 #' @description
-#' Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y escribe un archivo CSV, RDS, TXT o SAV.
+#' Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y escribe un archivo CSV, RDS, XLSX, TXT, PARQUET o SAV.
 #'
 #' @param x Objeto a escribir (ej: data.frame)
 #'
-#' @param ruta Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".txt" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")
+#' @param ruta Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")
 #'
 #'@export
 
 write_file_srv <- function(x, ruta) {
 
-  check <- sub("^[^|]+\\/", "", ruta) %in% herramientas::ls_srv(sub("/[^/]+$", "", ruta))
+  ext <- tools::file_ext(ruta)
 
-  if (check == TRUE) {
+  if (ext %in% c("csv", "rds", "xlsx", "txt", "sav", "parquet")) {
 
-    user_response <- readline(prompt="El archivo ya existe. Desea sobreescribirlo? (si/no): ")
+    if(Sys.info()["nodename"] != "dev-rstudio-vra-ubuntu") {
 
-    if (user_response == "si") {
+      check <- sub("^[^|]+\\/", "", ruta) %in% herramientas::ls_srv(sub("/[^/]+$", "", ruta))
 
-      temp_file <- tempfile()
+      if (check == TRUE) {
 
-      if (tools::file_ext(ruta) == "csv") {
-
-        readr::write_csv(x = x, file =temp_file)
-
-      } else if (tools::file_ext(ruta) == "rds") {
-
-        saveRDS(object = x, file = temp_file)
-
-      } else if (tools::file_ext(ruta) == "sav") {
-
-        haven::write_sav(data = x, path = temp_file)
-
-      } else if (tools::file_ext(ruta) == "txt") {
-
-        utils::write.table(x = x, file = temp_file, sep = ",", row.names = FALSE)
+        user_response <- readline(prompt="El archivo ya existe. Desea sobreescribirlo? (si/no): ")
 
       } else {
 
-        print("Formato de ruta invalido")
+        user_response <- "si"
 
       }
 
-      RCurl::ftpUpload(what = temp_file, glue::glue("sftp://{Sys.getenv('SRV_USER')}:{Sys.getenv('SRV_CLAVE')}@172.26.7.12/DataDNMYE/{ruta}"))
+      if (user_response == "si") {
+
+        temp_file <- tempfile()
+
+        if (ext == "csv") {
+
+          readr::write_csv(x = x, file =temp_file)
+
+        } else if (ext == "rds") {
+
+          saveRDS(object = x, file = temp_file)
+
+        } else if (ext == "sav") {
+
+          haven::write_sav(data = x, path = temp_file)
+
+        } else if (ext == "txt") {
+
+          utils::write.table(x = x, file = temp_file, sep = ",", row.names = FALSE)
+
+        } else if (ext == "xlsx") {
+
+          openxlsx::write.xlsx(x = x, file = temp_file, overwrite = T)
+
+        } else if (ext == "parquet") {
+
+          arrow::write_parquet(x = x, sink = temp_file)
+
+        }
+
+        suppressMessages(RCurl::ftpUpload(what = temp_file, glue::glue("sftp://{Sys.getenv('SRV_USER')}:{Sys.getenv('SRV_CLAVE')}@172.26.7.12/DataDNMYE/{ruta}")))
+
+        message("Escritura realizada")
+
+      } else {
+
+        message("Escritura cancelada")
+
+      }
 
     } else {
 
-      print("Escritura cancelada")
+      ruta <- paste0("/srv/DataDNMYE/",ruta)
+
+      check <- file.exists(ruta)
+
+      if (check == TRUE) {
+
+        user_response <- readline(prompt="El archivo ya existe. Desea sobreescribirlo? (si/no): ")
+
+      } else {
+
+        user_response <- "si"
+
+      }
+
+      if (user_response == "si") {
+
+
+        if (ext == "csv") {
+
+          readr::write_csv(x = x, file = ruta)
+
+        } else if (ext == "rds") {
+
+          saveRDS(object = x, file = ruta)
+
+        } else if (ext == "sav") {
+
+          haven::write_sav(data = x, path = ruta)
+
+        } else if (ext == "txt") {
+
+          utils::write.table(x = x, file = ruta, sep = ",", row.names = FALSE)
+
+        } else if (ext == "xlsx") {
+
+          openxlsx::write.xlsx(x = x, file = ruta, overwrite = T)
+
+        } else if (ext == "parquet") {
+
+          arrow::write_parquet(x = x, sink = ruta, compression = "uncompressed")
+
+        }
+        message("Escritura realizada")
+
+      } else {
+
+        message("Escritura cancelada")
+
+      }
 
     }
 
   } else {
 
-    temp_file <- tempfile()
-
-    if (tools::file_ext(ruta) == "csv") {
-
-      readr::write_csv(x = x, file =temp_file)
-
-    } else if (tools::file_ext(ruta) == "rds") {
-
-      saveRDS(object = x, file = temp_file)
-
-    } else if (tools::file_ext(ruta) == "sav") {
-
-      haven::write_sav(data = x, path = temp_file)
-
-    } else if (tools::file_ext(ruta) == "txt") {
-
-      utils::write.table(x = x, file = temp_file, sep = ",", row.names = FALSE)
-
-    } else {
-
-      print("Formato de ruta invalido")
-
-    }
-
-    RCurl::ftpUpload(what = temp_file, glue::glue("sftp://{Sys.getenv('SRV_USER')}:{Sys.getenv('SRV_CLAVE')}@172.26.7.12/DataDNMYE/{ruta}"))
+    message("Formato de archivo invalido")
 
   }
 
