@@ -27,7 +27,10 @@ Imports:
     readr,
     usethis,
     collapsibleTree,
-    tidyr
+    tidyr,
+    readxl,
+    openxlsx,
+    arrow
 Depends: 
     R (>= 2.10)
 Suggests: 
