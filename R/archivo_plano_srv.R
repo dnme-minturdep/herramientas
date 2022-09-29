@@ -8,7 +8,7 @@
 
 archivo_plano_srv <- function(ruta) {
 
-  RCurl::getBinaryURL(url = paste0("sftp://",Sys.getenv("SRV_USER"),
+  RCurl::getURL(url = paste0("sftp://",Sys.getenv("SRV_USER"),
                       "@172.26.7.12/DataDNMYE/",
                       ruta),
          userpwd = paste0(Sys.getenv("SRV_USER"),":", Sys.getenv("SRV_CLAVE")),
