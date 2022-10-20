@@ -9,8 +9,8 @@ write_file_srv(x, ruta)
 \arguments{
 \item{x}{Objeto a escribir (ej: data.frame)}
 
-\item{ruta}{Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".txt" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")}
+\item{ruta}{Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")}
 }
 \description{
-Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y escribe un archivo CSV, RDS, TXT o SAV.
+Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y escribe un archivo CSV, RDS, XLSX, TXT, PARQUET o SAV.
 }
