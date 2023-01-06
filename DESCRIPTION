@@ -1,6 +1,6 @@
 Package: herramientas
 Title: Conjunto de funciones para el procesamiento de datos en la DNMyE
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: c(
     person("Pablo", "Tiscornia", , "ptiscornia@turismo.gob.ar", role = c("aut", "cre")),
     person("Juan", "Juara", , "jgjuara@turismo.gob.ar", role = c("aut")),
@@ -16,7 +16,7 @@ Description: Caja de herramientas para el procesamiento de datos en la
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.2
 Imports: 
     mgsub,
     stringr,
