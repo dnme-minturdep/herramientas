@@ -17,7 +17,7 @@ Se puede instalar la versión en desarrollo de `{herramientas}` desde
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("d4t4tur/herramientas")
+devtools::install_github("dnme-minturdep/herramientas")
 ```
 
 ## Funciones
