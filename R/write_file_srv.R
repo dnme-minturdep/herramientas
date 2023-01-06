@@ -54,7 +54,7 @@ write_file_srv <- function(x, ruta) {
 
         } else if (ext == "parquet") {
 
-          arrow::write_parquet(x = x, sink = temp_file)
+          arrow::write_parquet(x = x, sink = temp_file, compression = "uncompressed")
 
         }
 
