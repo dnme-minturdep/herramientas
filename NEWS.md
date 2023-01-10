@@ -1,10 +1,14 @@
+# herramientas 0.0.0.9003
+
+* Mejora `remover_tildes()` limpia tildes de mayúsculas también.
+
 # herramientas 0.0.0.9002
 
-* Parametro "uncompressed" por default para write_file_srv desde local.
+* Parametro "uncompressed" por default para `write_file_srv()` desde local.
 
 # herramientas 0.0.0.9001
 
-* Incorporo las funciones de lectura (read_file_srv) y escritura (write_file_srv) desde el server
+* Incorporo las funciones de lectura `read_file_srv()` y escritura `write_file_srv()` desde el server
 
 # herramientas 0.0.0.9
 
