@@ -10,9 +10,9 @@ remover_tildes(texto)
 \item{texto}{variable de clase 'character' a la que se le quiere aplicar la función}
 }
 \description{
-Elimina tildes y dieresis de las vocales y la letra "y". Ej.: "ÿúòâ" en "yuoa".
+Elimina tildes y dieresis de las vocales y la letra "y". Ej.: "ÿÚòâ" en "yUoa".
 }
 \examples{
-remover_tildes("ÿúòâ") #"yuoa"
+remover_tildes("ÿÚòâ") #"yuoa"
 
 }

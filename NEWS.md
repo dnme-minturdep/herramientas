@@ -1,3 +1,7 @@
+# herramientas 0.0.0.9004
+
+* Agrego función `etiquetar_provincia` para generar los nombres y códigos oficiales de las provincias.
+
 # herramientas 0.0.0.9003
 
 * Mejora `remover_tildes()` limpia tildes de mayúsculas también.
