@@ -69,4 +69,12 @@ numeros_df <- tibble::tibble(digito = c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
                                         "noventa y cuatro", "noventa y cinco", "noventa y seis", "noventa y siete",
                                         "noventa y ocho", "noventa y nueve", "cien"))
 
-usethis::use_data(acentos_df, numeros_df, overwrite = TRUE, internal = T)
+provincias_df <- tibble::tibble(provincia_nombre = c("Ciudad Autónoma de Buenos Aires","Buenos Aires","Catamarca","Córdoba",
+                                                  "Corrientes","Chaco","Chubut","Entre Ríos","Formosa","Jujuy","La Pampa",
+                                                  "La Rioja","Mendoza","Misiones","Neuquén","Río Negro","Salta","San Juan",
+                                                  "San Luis","Santa Cruz","Santa Fe","Santiago del Estero","Tucumán",
+                                                  "Tierra del Fuego, Antártida e Islas del Atlántico Sur"),
+                             provincia_codigo = c("02","06","10","14","18","22","26","30","34","38","42","46","50",
+                                                  "54","58","62","66","70","74","78","82","86","90","94"))
+
+usethis::use_data(acentos_df, numeros_df, provincias_df, overwrite = TRUE, internal = T)

@@ -2,6 +2,7 @@
 
 export("%out%")
 export(archivo_plano_srv)
+export(etiquetar_provincia)
 export(limpiar_texto)
 export(ls_srv)
 export(numeros_en_palabras)
