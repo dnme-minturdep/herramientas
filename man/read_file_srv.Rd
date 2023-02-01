@@ -4,12 +4,19 @@
 \alias{read_file_srv}
 \title{Leer archivos del server:}
 \usage{
-read_file_srv(ruta, sheet = NULL)
+read_file_srv(ruta, ...)
 }
 \arguments{
 \item{ruta}{Texto con la ruta específica del archivo a leer con su extensión (acepta los siguientes formatos: "rds", "csv", "sav", "txt", ".parquet", "xlsx" y "xls") . Ej.: "aerocomercial/anac/base_anac_agrupada.rds".}
 
-\item{sheet}{En el caso de leer archivos excel, el número o nombre de la pestaña. Por default levanta la primera}
+\item{...}{Parametros para pasarle a la funcion de lectura subyacente:
+\itemize{
+\item csv/txt: readr::read_delim
+\item rds: readr::read_rds
+\item sav: readr::read_sav
+\item xlsx/xls: readxl::read_excel
+\item parquet: arrow::read_parquet
+}}
 }
 \description{
 Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y lee el archivo con una función acorde a la extensión del mismo.

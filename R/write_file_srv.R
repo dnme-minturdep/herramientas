@@ -6,9 +6,18 @@
 #'
 #' @param ruta Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")
 #'
+#' @param ... Parametros para pasarle a la funcion de escritura subyacente:
+#' - csv: readr::write_csv
+#' - txt: utils::write.table
+#' - rds: readr::write_rds
+#' - sav: haven::write_sav
+#' - xlsx: openxlsx::write.xlsx
+#' - parquet: arrow::write_parquet
 #'@export
 
-write_file_srv <- function(x, ruta) {
+write_file_srv <- function(x, ruta, ...) {
+
+  ruta <- gsub(x = ruta, pattern = "/srv/DataDNMYE/", replacement = "")
 
   ext <- tools::file_ext(ruta)
 
@@ -34,27 +43,27 @@ write_file_srv <- function(x, ruta) {
 
         if (ext == "csv") {
 
-          readr::write_csv(x = x, file =temp_file)
+          readr::write_csv(x = x, file =temp_file, ...)
 
         } else if (ext == "rds") {
 
-          saveRDS(object = x, file = temp_file)
+          readr::write_rds(object = x, file = temp_file, ...)
 
         } else if (ext == "sav") {
 
-          haven::write_sav(data = x, path = temp_file)
+          haven::write_sav(data = x, path = temp_file, ...)
 
         } else if (ext == "txt") {
 
-          utils::write.table(x = x, file = temp_file, sep = ",", row.names = FALSE)
+          utils::write.table(x = x, file = temp_file, ...)
 
         } else if (ext == "xlsx") {
 
-          openxlsx::write.xlsx(x = x, file = temp_file, overwrite = T)
+          openxlsx::write.xlsx(x = x, file = temp_file, overwrite = T, ...)
 
         } else if (ext == "parquet") {
 
-          arrow::write_parquet(x = x, sink = temp_file, compression = "uncompressed")
+          arrow::write_parquet(x = x, sink = temp_file, ...)
 
         }
 
@@ -89,27 +98,27 @@ write_file_srv <- function(x, ruta) {
 
         if (ext == "csv") {
 
-          readr::write_csv(x = x, file = ruta)
+          readr::write_csv(x = x, file = ruta, ...)
 
         } else if (ext == "rds") {
 
-          saveRDS(object = x, file = ruta)
+          readr::write_rds(object = x, file = ruta, ...)
 
         } else if (ext == "sav") {
 
-          haven::write_sav(data = x, path = ruta)
+          haven::write_sav(data = x, path = ruta, ...)
 
         } else if (ext == "txt") {
 
-          utils::write.table(x = x, file = ruta, sep = ",", row.names = FALSE)
+          utils::write.table(x = x, file = ruta,  ...)
 
         } else if (ext == "xlsx") {
 
-          openxlsx::write.xlsx(x = x, file = ruta, overwrite = T)
+          openxlsx::write.xlsx(x = x, file = ruta, overwrite = T, ...)
 
         } else if (ext == "parquet") {
 
-          arrow::write_parquet(x = x, sink = ruta, compression = "uncompressed")
+          arrow::write_parquet(x = x, sink = ruta, ...)
 
         }
         message("Escritura realizada")

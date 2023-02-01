@@ -4,11 +4,18 @@
 #'
 #' @param ruta Texto con la ruta específica del archivo a leer con su extensión (acepta los siguientes formatos: "rds", "csv", "sav", "txt", ".parquet", "xlsx" y "xls") . Ej.: "aerocomercial/anac/base_anac_agrupada.rds".
 #'
-#' @param sheet En el caso de leer archivos excel, el número o nombre de la pestaña. Por default levanta la primera
+#' @param ... Parametros para pasarle a la funcion de lectura subyacente:
+#' - csv/txt: readr::read_delim
+#' - rds: readr::read_rds
+#' - sav: readr::read_sav
+#' - xlsx/xls: readxl::read_excel
+#' - parquet: arrow::read_parquet
 #'
 #'@export
 
-read_file_srv <- function(ruta, sheet = NULL) {
+read_file_srv <- function(ruta, ...) {
+
+  ruta <- gsub(x = ruta, pattern = "/srv/DataDNMYE/", replacement = "")
 
   ext <- tools::file_ext(ruta)
 
@@ -23,7 +30,7 @@ read_file_srv <- function(ruta, sheet = NULL) {
 
       if (ext %in% c("csv","txt")) {
 
-        readr::read_delim(con)
+        readr::read_delim(con, ...)
 
       } else if (ext == "rds") {
 
@@ -31,7 +38,7 @@ read_file_srv <- function(ruta, sheet = NULL) {
 
         on.exit(close(con))
 
-        readRDS(con)
+        readr::read_rds(con, ...)
 
       } else if (ext == "sav") {
 
@@ -39,7 +46,7 @@ read_file_srv <- function(ruta, sheet = NULL) {
 
         on.exit(close(con))
 
-        haven::read_sav(con)
+        haven::read_sav(con, ...)
 
       } else if (ext %in% c("xlsx","xls"))  {
 
@@ -47,11 +54,11 @@ read_file_srv <- function(ruta, sheet = NULL) {
 
         writeBin(con, con = tf)
 
-        readxl::read_excel(tf, sheet = sheet)
+        readxl::read_excel(tf, ...)
 
       } else if (ext == "parquet") {
 
-        arrow::read_parquet(con)
+        arrow::read_parquet(con, ...)
 
       }
 
@@ -61,23 +68,23 @@ read_file_srv <- function(ruta, sheet = NULL) {
 
       if (ext %in% c("csv","txt")) {
 
-        readr::read_delim(con)
+        readr::read_delim(con, ...)
 
       } else if (ext == "rds") {
 
-        readRDS(con)
+        readr::read_rds(con, ...)
 
       } else if (ext == "sav") {
 
-        haven::read_sav(con)
+        haven::read_sav(con, ...)
 
       } else if (ext %in% c("xlsx","xls"))  {
 
-        readxl::read_excel(con, sheet = sheet)
+        readxl::read_excel(con, ...)
 
       } else if (ext == "parquet") {
 
-        arrow::read_parquet(con)
+        arrow::read_parquet(con, ...)
 
       }
     }

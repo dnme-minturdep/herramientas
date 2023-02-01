@@ -4,12 +4,22 @@
 \alias{write_file_srv}
 \title{Leer archivos rds del server:}
 \usage{
-write_file_srv(x, ruta)
+write_file_srv(x, ruta, ...)
 }
 \arguments{
 \item{x}{Objeto a escribir (ej: data.frame)}
 
 \item{ruta}{Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")}
+
+\item{...}{Parametros para pasarle a la funcion de escritura subyacente:
+\itemize{
+\item csv: readr::write_csv
+\item txt: utils::write.table
+\item rds: readr::write_rds
+\item sav: haven::write_sav
+\item xlsx: openxlsx::write.xlsx
+\item parquet: arrow::write_parquet
+}}
 }
 \description{
 Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y escribe un archivo CSV, RDS, XLSX, TXT, PARQUET o SAV.
