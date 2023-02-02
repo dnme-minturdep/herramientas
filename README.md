@@ -17,7 +17,7 @@ Se puede instalar la versión en desarrollo de `{herramientas}` desde
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("dnme-minturdep/herramientas")
+devtools::install_github('dnme-minturdep/herramientas', upgrade = FALSE)
 ```
 
 ## Funciones
