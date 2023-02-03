@@ -1,16 +1,18 @@
 #' Etiquetado de variable provincias:
 #' @description
-#' Genera una columna, denominada "provincia_nombre", con el nombre oficial de la provincia y otra columna, denominada "provincia_codigo", con su código numérico INDEC (dos posiciones)
+#' Genera una columna con el nombre oficial de la provincia y otra columna, denominada "provincia_codigo", con su código numérico INDEC (dos posiciones)
 #'
 #' @param base Dataframe con una variable que refiere a las provincias
 #'
 #' @param id_col Columna con el nombre de la provincia o su código INDEC
 #'
+#' @param new_name Define el nuevo nombre de la columna con las etiquetas de provincia. Por default es "provincia_nombre"
+#'
 #' @param add_codes Indica si se desea agregar la columna con el código de la provincia. Por default es TRUE
 #'
 #'@export
 
-etiquetar_provincia <- function(base, id_col, add_codes = T) {
+etiquetar_provincia <- function(base, id_col, new_name = "provincia_nombre", add_codes = T) {
 
 
   type <- stringr::str_detect(paste(utils::head(dplyr::pull(base, {{id_col}}), 5), collapse = ""), "[[:digit:]]")
@@ -19,7 +21,7 @@ etiquetar_provincia <- function(base, id_col, add_codes = T) {
 
       base <- dplyr::mutate(base, "function_var_chequeo_prov" = limpiar_texto({{id_col}}))
 
-      base <- dplyr::mutate(base, provincia_nombre =
+      base <- dplyr::mutate(base, fixed_function_var_prov =
                               dplyr::case_when(
                                 stringr::str_detect(function_var_chequeo_prov, "caba|ciudad|autonoma|federal|capital") ~ "Ciudad Autónoma de Buenos Aires",
                                 stringr::str_detect(function_var_chequeo_prov, "buenos aires|bs") ~ "Buenos Aires",
@@ -44,16 +46,19 @@ etiquetar_provincia <- function(base, id_col, add_codes = T) {
                                 stringr::str_detect(function_var_chequeo_prov, "santa fe") ~ "Santa Fe",
                                 stringr::str_detect(function_var_chequeo_prov, "santiago del estero") ~ "Santiago del Estero",
                                 stringr::str_detect(function_var_chequeo_prov, "tucuman") ~ "Tucumán",
-                                stringr::str_detect(function_var_chequeo_prov, "tierra del fuego") ~ "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
-                                TRUE ~  NA_character_))
+                                stringr::str_detect(function_var_chequeo_prov, "fuego") ~ "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+                                TRUE ~ NA_character_))
 
       base <- dplyr::select(base, -c("function_var_chequeo_prov"))
 
+
       if (add_codes == T) {
 
-      vector <- stats::setNames("provincia_nombre", as.character(substitute(id_col)))
+      vector <- stats::setNames("provincia_nombre", as.character(substitute(fixed_function_var_prov)))
 
       base <- dplyr::left_join(base, provincias_df, by = vector)
+
+      base <- dplyr::rename_with(base, .cols = fixed_function_var_prov, .fn = ~ as.character(sym(new_name)))
 
       } else {
         base
@@ -61,10 +66,10 @@ etiquetar_provincia <- function(base, id_col, add_codes = T) {
 
     } else {
 
-
-      vector <- stats::setNames( "provincia_codigo", as.character(substitute(id_col)))
+      vector <- stats::setNames("provincia_codigo", as.character(substitute(id_col)))
 
       base <- dplyr::left_join(base, provincias_df, by = vector)
 
+      base <- dplyr::rename_with(base, .cols = provincia_nombre, .fn = ~ as.character(sym(new_name)))
     }
 }
