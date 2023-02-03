@@ -1,3 +1,7 @@
+# herramientas 0.0.0.9006
+
+* Mejora función `etiquetar_provincia`: agrego parámetro para definir nombre de columna nueva.
+
 # herramientas 0.0.0.9005
 
 * Mejora función `ls_srv`: devuelve ruta completa de los archivos y carpetas.
