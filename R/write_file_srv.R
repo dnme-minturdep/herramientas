@@ -47,7 +47,7 @@ write_file_srv <- function(x, ruta, ...) {
 
         } else if (ext == "rds") {
 
-          readr::write_rds(object = x, file = temp_file, ...)
+          readr::write_rds(x = x, file = temp_file, ...)
 
         } else if (ext == "sav") {
 
@@ -102,7 +102,7 @@ write_file_srv <- function(x, ruta, ...) {
 
         } else if (ext == "rds") {
 
-          readr::write_rds(object = x, file = ruta, ...)
+          readr::write_rds(x = x, file = ruta, ...)
 
         } else if (ext == "sav") {
 
