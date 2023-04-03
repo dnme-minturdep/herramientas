@@ -1,3 +1,7 @@
+# herramientas 0.0.0.9007
+
+* Arreglo bug en `remover_tildes`.
+
 # herramientas 0.0.0.9006
 
 * Mejora función `etiquetar_provincia`: agrego parámetro para definir nombre de columna nueva.
