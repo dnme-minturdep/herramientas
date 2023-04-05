@@ -2,7 +2,7 @@
 #' @description
 #' Hace una conexión a la ruta indicada dentro de /srv/DataDNMYE/ y lee el archivo con una función acorde a la extensión del mismo.
 #'
-#' @param ruta Texto con la ruta específica del archivo a leer con su extensión (acepta los siguientes formatos: "rds", "csv", "sav", "txt", ".parquet", "xlsx" y "xls") . Ej.: "aerocomercial/anac/base_anac_agrupada.rds".
+#' @param ruta Texto con la ruta específica del archivo a leer con su extensión (acepta los siguientes formatos: "rds", "csv", "sav", "txt", ".parquet", "xlsx", "xls", "gpkg", "geojson" y "kml") . Ej.: "aerocomercial/anac/base_anac_agrupada.rds".
 #'
 #' @param ... Parametros para pasarle a la funcion de lectura subyacente:
 #' - csv/txt: readr::read_delim
@@ -10,6 +10,7 @@
 #' - sav: readr::read_sav
 #' - xlsx/xls: readxl::read_excel
 #' - parquet: arrow::read_parquet
+#' - gpkg/geojson/kml: sf::read_sf
 #'
 #'@export
 
@@ -19,7 +20,7 @@ read_file_srv <- function(ruta, ...) {
 
   ext <- tools::file_ext(ruta)
 
-  if (ext %in% c("csv", "rds", "xlsx", "xls", "txt", "sav", "parquet")) {
+  if (ext %in% c("csv", "rds", "xlsx", "xls", "txt", "sav", "parquet", "gpkg", "geojson", "kml")) {
 
     if(Sys.info()["nodename"] != "dev-rstudio-vra-ubuntu") {
 
@@ -60,6 +61,14 @@ read_file_srv <- function(ruta, ...) {
 
         arrow::read_parquet(con, ...)
 
+      } else if (ext %in% c("gpkg","geojson","kml")) {
+
+        tf <-  tempfile()
+
+        writeBin(con, con = tf)
+
+        suppressWarnings(sf::read_sf(tf, ...))
+
       }
 
     } else {
@@ -85,6 +94,10 @@ read_file_srv <- function(ruta, ...) {
       } else if (ext == "parquet") {
 
         arrow::read_parquet(con, ...)
+
+      } else if (ext %in% c("gpkg","geojson","kml")) {
+
+        sf::read_sf(con, ...)
 
       }
     }

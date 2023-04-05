@@ -4,15 +4,17 @@
 \alias{etiquetar_provincia}
 \title{Etiquetado de variable provincias:}
 \usage{
-etiquetar_provincia(base, id_col, add_codes = T)
+etiquetar_provincia(base, id_col, new_name = "provincia_nombre", add_codes = T)
 }
 \arguments{
 \item{base}{Dataframe con una variable que refiere a las provincias}
 
 \item{id_col}{Columna con el nombre de la provincia o su código INDEC}
 
+\item{new_name}{Define el nuevo nombre de la columna con las etiquetas de provincia. Por default es "provincia_nombre"}
+
 \item{add_codes}{Indica si se desea agregar la columna con el código de la provincia. Por default es TRUE}
 }
 \description{
-Genera una columna, denominada "provincia_nombre", con el nombre oficial de la provincia y otra columna, denominada "provincia_codigo", con su código numérico INDEC (dos posiciones)
+Genera una columna con el nombre oficial de la provincia y otra columna, denominada "provincia_codigo", con su código numérico INDEC (dos posiciones)
 }

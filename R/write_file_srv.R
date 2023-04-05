@@ -4,7 +4,7 @@
 #'
 #' @param x Objeto a escribir (ej: data.frame)
 #'
-#' @param ruta Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")
+#' @param ruta Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet", ".sav", "gpkg", "geojson" y "kml"). Ej: "aerocomercial/anac/base_final.csv")
 #'
 #' @param ... Parametros para pasarle a la funcion de escritura subyacente:
 #' - csv: readr::write_csv
@@ -13,6 +13,7 @@
 #' - sav: haven::write_sav
 #' - xlsx: openxlsx::write.xlsx
 #' - parquet: arrow::write_parquet
+#' - gpkg/geojson/kml: sf::write_sf
 #'@export
 
 write_file_srv <- function(x, ruta, ...) {
@@ -21,11 +22,11 @@ write_file_srv <- function(x, ruta, ...) {
 
   ext <- tools::file_ext(ruta)
 
-  if (ext %in% c("csv", "rds", "xlsx", "txt", "sav", "parquet")) {
+  if (ext %in% c("csv", "rds", "xlsx", "txt", "sav", "parquet", "gpkg", "geojson","kml")) {
 
     if(Sys.info()["nodename"] != "dev-rstudio-vra-ubuntu") {
 
-      check <- sub("^[^|]+\\/", "", ruta) %in% herramientas::ls_srv(sub("/[^/]+$", "", ruta))
+      check <- paste0("/srv/DataDNMYE/", ruta) %in% herramientas::ls_srv(sub("/[^/]+$", "", ruta))
 
       if (check == TRUE) {
 
@@ -64,6 +65,10 @@ write_file_srv <- function(x, ruta, ...) {
         } else if (ext == "parquet") {
 
           arrow::write_parquet(x = x, sink = temp_file, ...)
+
+        } else if (ext %in% c("gpkg", "geojson", "kml")) {
+
+          suppressWarnings(sf::write_sf(x, temp_file, driver = ext, ...))
 
         }
 
@@ -119,6 +124,10 @@ write_file_srv <- function(x, ruta, ...) {
         } else if (ext == "parquet") {
 
           arrow::write_parquet(x = x, sink = ruta, ...)
+
+        } else if (ext %in% c("gpkg","geojson","kml")) {
+
+          sf::write_sf(x, ruta, ...)
 
         }
         message("Escritura realizada")
