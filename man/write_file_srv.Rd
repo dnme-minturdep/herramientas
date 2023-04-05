@@ -9,7 +9,7 @@ write_file_srv(x, ruta, ...)
 \arguments{
 \item{x}{Objeto a escribir (ej: data.frame)}
 
-\item{ruta}{Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")}
+\item{ruta}{Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet", ".sav", "gpkg", "geojson" y "kml"). Ej: "aerocomercial/anac/base_final.csv")}
 
 \item{...}{Parametros para pasarle a la funcion de escritura subyacente:
 \itemize{
@@ -19,6 +19,7 @@ write_file_srv(x, ruta, ...)
 \item sav: haven::write_sav
 \item xlsx: openxlsx::write.xlsx
 \item parquet: arrow::write_parquet
+\item gpkg/geojson/kml: sf::write_sf
 }}
 }
 \description{

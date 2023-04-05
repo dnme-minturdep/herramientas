@@ -1,3 +1,7 @@
+# herramientas 0.0.0.9008
+
+* Agrego lectura y escritura de datos espaciales en read_file_srv y write_file_srv.
+
 # herramientas 0.0.0.9007
 
 * Arreglo bug en `remover_tildes`.
