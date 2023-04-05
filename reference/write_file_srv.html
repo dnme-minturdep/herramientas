@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">herramientas</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9007</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9008</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
 
 
 <dt>ruta</dt>
-<dd><p>Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet" y ".sav"). Ej: "aerocomercial/anac/base_final.csv")</p></dd>
+<dd><p>Texto con la ruta del archivo, incluyendo nombre y extensión del mismo (acepta ".csv", ".rds", ".xlsx", ".txt", ".parquet", ".sav", "gpkg", "geojson" y "kml"). Ej: "aerocomercial/anac/base_final.csv")</p></dd>
 
 
 <dt>...</dt>
@@ -65,6 +65,7 @@
 <li><p>sav: haven::write_sav</p></li>
 <li><p>xlsx: openxlsx::write.xlsx</p></li>
 <li><p>parquet: arrow::write_parquet</p></li>
+<li><p>gpkg/geojson/kml: sf::write_sf</p></li>
 </ul></dd>
 
 </dl></div>

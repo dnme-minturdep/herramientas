@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">herramientas</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9007</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9008</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>ruta</dt>
-<dd><p>Texto con la ruta específica del archivo a leer con su extensión (acepta los siguientes formatos: "rds", "csv", "sav", "txt", ".parquet", "xlsx" y "xls") . Ej.: "aerocomercial/anac/base_anac_agrupada.rds".</p></dd>
+<dd><p>Texto con la ruta específica del archivo a leer con su extensión (acepta los siguientes formatos: "rds", "csv", "sav", "txt", ".parquet", "xlsx", "xls", "gpkg", "geojson" y "kml") . Ej.: "aerocomercial/anac/base_anac_agrupada.rds".</p></dd>
 
 
 <dt>...</dt>
@@ -60,6 +60,7 @@
 <li><p>sav: readr::read_sav</p></li>
 <li><p>xlsx/xls: readxl::read_excel</p></li>
 <li><p>parquet: arrow::read_parquet</p></li>
+<li><p>gpkg/geojson/kml: sf::read_sf</p></li>
 </ul></dd>
 
 </dl></div>
