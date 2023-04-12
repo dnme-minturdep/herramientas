@@ -1,6 +1,10 @@
+# herramientas 0.0.0.9009
+
+* Corrige #26 reemplazando `readr::read_rds()` por `base::readRds`
+
 # herramientas 0.0.0.9008
 
-* Agrego lectura y escritura de datos espaciales en read_file_srv y write_file_srv.
+* Agrego lectura y escritura de datos espaciales en `read_file_srv` y `write_file_srv`.
 
 # herramientas 0.0.0.9007
 

@@ -4,9 +4,9 @@
 #'
 #' @param ruta Texto con la ruta específica del archivo a leer con su extensión (acepta los siguientes formatos: "rds", "csv", "sav", "txt", ".parquet", "xlsx", "xls", "gpkg", "geojson" y "kml") . Ej.: "aerocomercial/anac/base_anac_agrupada.rds".
 #'
-#' @param ... Parametros para pasarle a la funcion de lectura subyacente:
+#' @param ... Parámetros para pasarle a la función de lectura subyacente:
 #' - csv/txt: readr::read_delim
-#' - rds: readr::read_rds
+#' - rds: base::readRDS
 #' - sav: readr::read_sav
 #' - xlsx/xls: readxl::read_excel
 #' - parquet: arrow::read_parquet
@@ -39,7 +39,7 @@ read_file_srv <- function(ruta, ...) {
 
         on.exit(close(con))
 
-        readr::read_rds(con, ...)
+        base::readRDS(con, ...)
 
       } else if (ext == "sav") {
 
@@ -81,7 +81,7 @@ read_file_srv <- function(ruta, ...) {
 
       } else if (ext == "rds") {
 
-        readr::read_rds(con, ...)
+        base::readRDS(con, ...)
 
       } else if (ext == "sav") {
 
