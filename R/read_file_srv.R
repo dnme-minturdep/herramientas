@@ -16,7 +16,8 @@
 
 read_file_srv <- function(ruta, ...) {
 
-  ruta <- gsub(x = ruta, pattern = "/srv/DataDNMYE/", replacement = "")
+
+  ruta <- gsub(x = ruta, pattern = ".*/DataDNMYE/", replacement = "")
 
   ext <- tools::file_ext(ruta)
 
