@@ -36,9 +36,16 @@ reference:
    - '%out%'
    - 'etiquetar_provincia'
 - title: "Manejo de archivos"
+- subtitle: "Servidor"
   desc: "Funciones auxiliares para trabajar con archivos del servidor DNMyE"
   contents:
    - contains("srv")
+- subtitle: "Proyectos"
+  desc: "Funciones auxiliares para flujo de trabajo inical de nuevos proyectos"
+  contents:
+   - 'crear_carpetas'
+   - 'crear_proyecto'
+   - 'sync_proyecto_git'   
 - title: "Cálculos"
   desc: "Funciones auxiliares para cálculo de indicadores"
   contents:
