@@ -45,9 +45,13 @@ reference:
   contents:
    - 'crear_carpetas'
    - 'crear_proyecto'
-   - 'sync_proyecto_git'   
+   - 'sync_proyecto_git'
 - title: "Cálculos"
   desc: "Funciones auxiliares para cálculo de indicadores"
   contents:
    - 'tasa_variacion'
+- title: "internal"
+  desc:
+  contents:
+   - 'herramientas'
 
