@@ -19,6 +19,12 @@
     <loc>https://dnme-minturdep.github.io/herramientas/reference/archivo_plano_srv.html</loc>
   </url>
   <url>
+    <loc>https://dnme-minturdep.github.io/herramientas/reference/crear_carpetas.html</loc>
+  </url>
+  <url>
+    <loc>https://dnme-minturdep.github.io/herramientas/reference/crear_proyecto.html</loc>
+  </url>
+  <url>
     <loc>https://dnme-minturdep.github.io/herramientas/reference/etiquetar_provincia.html</loc>
   </url>
   <url>
@@ -50,6 +56,9 @@
   </url>
   <url>
     <loc>https://dnme-minturdep.github.io/herramientas/reference/set_user_srv.html</loc>
+  </url>
+  <url>
+    <loc>https://dnme-minturdep.github.io/herramientas/reference/sync_proyecto_git.html</loc>
   </url>
   <url>
     <loc>https://dnme-minturdep.github.io/herramientas/reference/tasa_variacion.html</loc>
