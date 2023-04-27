@@ -32,7 +32,7 @@ Imports:
     openxlsx,
     arrow,
     sf, 
-    asserthat, 
+    assertthat, 
     tibble
 Depends: 
     R (>= 2.10)
