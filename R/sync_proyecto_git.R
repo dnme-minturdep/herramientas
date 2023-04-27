@@ -11,7 +11,7 @@
 sync_proyecto_git <- function(repo = "d4t4tur",
                               privado = TRUE){
 
-  usethis::use_git()
+  usethis::use_git(message = "Armado de proyecto")
   usethis::use_github(organisation = repo,
                       private = privado)
 
