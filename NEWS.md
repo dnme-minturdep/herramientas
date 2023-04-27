@@ -1,3 +1,13 @@
+# herramientas 0.0.0.9010
+
+* Agrega funciones para iniciar el flujo de trabajo de proyectos nuevos:
+
+- `herramientas::crear_proyecto()` para generar un nuvo proyecto
+
+- `herramientas::crear_carpetas()` para armar esqueleto típico de sub-directorios
+
+- `herramientas::sync_proyecto()` para sincronizar remoto/origen con repositorio en Github (organizacion)
+
 # herramientas 0.0.0.9009
 
 * Corrige #26 reemplazando `readr::read_rds()` por `base::readRds`

@@ -9,10 +9,10 @@ read_file_srv(ruta, ...)
 \arguments{
 \item{ruta}{Texto con la ruta específica del archivo a leer con su extensión (acepta los siguientes formatos: "rds", "csv", "sav", "txt", ".parquet", "xlsx", "xls", "gpkg", "geojson" y "kml") . Ej.: "aerocomercial/anac/base_anac_agrupada.rds".}
 
-\item{...}{Parametros para pasarle a la funcion de lectura subyacente:
+\item{...}{Parámetros para pasarle a la función de lectura subyacente:
 \itemize{
 \item csv/txt: readr::read_delim
-\item rds: readr::read_rds
+\item rds: base::readRDS
 \item sav: readr::read_sav
 \item xlsx/xls: readxl::read_excel
 \item parquet: arrow::read_parquet
