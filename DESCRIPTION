@@ -1,6 +1,6 @@
 Package: herramientas
 Title: Conjunto de funciones para el procesamiento de datos en la DNMyE
-Version: 0.0.0.9010
+Version: 0.0.0.9011
 Authors@R: c(
     person("Pablo", "Tiscornia", , "ptiscornia@turismo.gob.ar", role = c("aut")),
     person("Juan", "Juara", , "jgjuara@turismo.gob.ar", role = c("aut", "cre")),
@@ -33,7 +33,8 @@ Imports:
     arrow,
     sf, 
     assertthat, 
-    tibble
+    tibble,
+    textclean
 Depends: 
     R (>= 2.10)
 Suggests: 

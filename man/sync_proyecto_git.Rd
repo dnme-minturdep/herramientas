@@ -4,7 +4,7 @@
 \alias{sync_proyecto_git}
 \title{Sincronizar proyecto con Github}
 \usage{
-sync_proyecto_git(repo = "d4t4tur", privado = TRUE)
+sync_proyecto_git(repo = "d4t4tur", privado = TRUE, protocolo = "ssh")
 }
 \arguments{
 \item{repo}{Por defecto estos se crean en repositorio DEP ('d4t4tur'). Se puede pasar 'repo = "dnme-minturdep"'
@@ -12,6 +12,9 @@ como argumento alternativo para vincular con repositorio PROD}
 
 \item{privado}{Por defecto el repositorio será privado. Se puede pasar como argumento
 'privado = FALSE' para que sea público'}
+
+\item{protocolo}{Por defecto el repositorio usa protocolo de conexión 'ssh'. Se puede pasar como argumento
+'protocolo = "https"' como alternativa}
 }
 \value{
 Vínculo origin/remote para un repositorio .git sincronizado con Organización en Github

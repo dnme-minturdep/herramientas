@@ -1,3 +1,7 @@
+# herramientas 0.0.0.9011
+
+* Arreglo bug de `herramientas::etiquetar_provincia()`: ahora toma el nuevo nombre de la columna etiquetada aunque tenga `add_code =  F` y siempre hacer `return` de la base etiquetada
+
 # herramientas 0.0.0.9010
 
 * Agrega funciones para iniciar el flujo de trabajo de proyectos nuevos:

@@ -19,7 +19,8 @@ etiquetar_provincia <- function(base, id_col, new_name = "provincia_nombre", add
 
     if (type == F) {
 
-      base <- dplyr::mutate(base, "function_var_chequeo_prov" = limpiar_texto({{id_col}}))
+      base <- dplyr::mutate(base,
+                            function_var_chequeo_prov = textclean::replace_non_ascii(stringr::str_squish(tolower({{id_col}}))))
 
       base <- dplyr::mutate(base, fixed_function_var_prov =
                               dplyr::case_when(
@@ -54,13 +55,17 @@ etiquetar_provincia <- function(base, id_col, new_name = "provincia_nombre", add
 
       if (add_codes == T) {
 
-      vector <- stats::setNames("provincia_nombre", as.character(substitute(fixed_function_var_prov)))
+        vector <- stats::setNames("provincia_nombre", as.character(substitute(fixed_function_var_prov)))
 
-      base <- dplyr::left_join(base, provincias_df, by = vector)
+        base <- dplyr::left_join(base, provincias_df, by = vector)
 
-      base <- dplyr::rename_with(base, .cols = fixed_function_var_prov, .fn = ~ as.character(sym(new_name)))
+        base <- dplyr::rename_with(base, .cols = fixed_function_var_prov, .fn = ~ as.character(sym(new_name)))
+
+        base
 
       } else {
+        base <- dplyr::rename_with(base, .cols = fixed_function_var_prov,
+                                   .fn = ~as.character(sym(new_name)))
         base
       }
 
@@ -71,5 +76,8 @@ etiquetar_provincia <- function(base, id_col, new_name = "provincia_nombre", add
       base <- dplyr::left_join(base, provincias_df, by = vector)
 
       base <- dplyr::rename_with(base, .cols = provincia_nombre, .fn = ~ as.character(sym(new_name)))
+
+      base
     }
 }
+
