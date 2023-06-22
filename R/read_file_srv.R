@@ -19,11 +19,15 @@ read_file_srv <- function(ruta, ...) {
 
   ruta <- gsub(x = ruta, pattern = ".*/DataDNMYE/", replacement = "")
 
+  ruta <- gsub(x = ruta, pattern = "//", replacement = "/")
+
   ext <- tools::file_ext(ruta)
 
   if (ext %in% c("csv", "rds", "xlsx", "xls", "txt", "sav", "parquet", "gpkg", "geojson", "kml")) {
 
     if(Sys.info()["nodename"] != "dev-rstudio-vra-ubuntu") {
+
+      ruta <- stringr::str_replace_all(ruta, " ", "%20")
 
       con <- RCurl::getBinaryURL(url = paste0("sftp://", Sys.getenv("SRV_USER"),
                                               "@172.26.7.12/DataDNMYE/", ruta),
