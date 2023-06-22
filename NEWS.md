@@ -1,3 +1,7 @@
+# herramientas 0.0.0.9012
+
+* Mejoro `herramientas::read_file_srv()`: acepta espacios en la ruta de lectura.
+
 # herramientas 0.0.0.9011
 
 * Arreglo bug de `herramientas::etiquetar_provincia()`: ahora toma el nuevo nombre de la columna etiquetada aunque tenga `add_code =  F` y siempre hacer `return` de la base etiquetada
