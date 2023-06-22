@@ -19,6 +19,8 @@ read_file_srv <- function(ruta, ...) {
 
   ruta <- gsub(x = ruta, pattern = ".*/DataDNMYE/", replacement = "")
 
+  ruta <- gsub(x = ruta, pattern = "//", replacement = "/")
+
   ext <- tools::file_ext(ruta)
 
   if (ext %in% c("csv", "rds", "xlsx", "xls", "txt", "sav", "parquet", "gpkg", "geojson", "kml")) {
