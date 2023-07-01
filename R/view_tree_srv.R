@@ -7,8 +7,8 @@
 
 view_tree_srv <- function() {
 
-  ruta <- RCurl::getURL(url = paste0("sftp://",Sys.getenv("SRV_USER"),
-                             "@172.26.7.12/DataDNMYE/tree.csv"),
+  ruta <- RCurl::getURL(url = paste0("sftp://",Sys.getenv("SRV_USER"),"@",Sys.getenv("SRV_IP"),
+                             "/DataDNMYE/tree.csv"),
                 userpwd = paste0(Sys.getenv("SRV_USER"),":", Sys.getenv("SRV_CLAVE")),
                 dirlistonly = FALSE, .encoding = "UTF-8")
 

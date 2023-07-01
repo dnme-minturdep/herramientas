@@ -72,7 +72,7 @@ write_file_srv <- function(x, ruta, ...) {
 
         }
 
-        suppressMessages(RCurl::ftpUpload(what = temp_file, glue::glue("sftp://{Sys.getenv('SRV_USER')}:{Sys.getenv('SRV_CLAVE')}@172.26.7.12/DataDNMYE/{ruta}")))
+        suppressMessages(RCurl::ftpUpload(what = temp_file, glue::glue("sftp://{Sys.getenv('SRV_USER')}:{Sys.getenv('SRV_CLAVE')}@{Sys.getenv('SRV_IP')}/DataDNMYE/{ruta}")))
 
         message("Escritura realizada")
 

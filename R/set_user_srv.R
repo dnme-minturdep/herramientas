@@ -9,6 +9,7 @@ set_user_srv <- function() {
   Agregar al archivo .Renviron abierto el nombre de usuario y clave:
   SRV_USER = \"nombredeusuario\"
   SRV_CLAVE = \"clavedeusuario\"
+  SRV_IP = \"numerodeip\"
 ###
   Guardar archivo y reiniciar sesion.\n")
   usethis::edit_r_environ()

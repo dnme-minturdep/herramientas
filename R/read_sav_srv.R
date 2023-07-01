@@ -10,8 +10,8 @@
 
 
 read_sav_srv <- function(ruta) {
-  con <- RCurl::getBinaryURL(url = paste0("sftp://", Sys.getenv("SRV_USER"),
-                                   "@172.26.7.12/DataDNMYE/", ruta),
+  con <- RCurl::getBinaryURL(url = paste0("sftp://", Sys.getenv("SRV_USER"),"@",Sys.getenv("SRV_IP"),
+                                          "/DataDNMYE/", ruta),
                       userpwd = paste0(Sys.getenv("SRV_USER"),":", Sys.getenv("SRV_CLAVE")),
                       dirlistonly = FALSE)
 
