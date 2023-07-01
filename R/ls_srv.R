@@ -10,33 +10,55 @@
 
 ls_srv <- function(ruta = NULL, full_names = F) {
 
-  if (!is.null(ruta)) {
+  if(Sys.info()["nodename"] != "dev-rstudio-vra-ubuntu") {
 
-    ruta <- gsub(x = ruta, pattern = ".*/DataDNMYE/", replacement = "")
+    if (!is.null(ruta)) {
 
-    ruta <- gsub(x = ruta, pattern = "//", replacement = "/")
+      ruta <- gsub(x = ruta, pattern = ".*/DataDNMYE/", replacement = "")
 
-  }
+      ruta <- gsub(x = ruta, pattern = "//", replacement = "/")
 
-  resultados <- sort(
-    strsplit(
-      as.vector(
-        RCurl::getURL(url = paste0("sftp://", Sys.getenv("SRV_USER"),"@",Sys.getenv("SRV_IP"),
-                                   "/DataDNMYE/", ruta, "/"),
-                      userpwd = paste0(Sys.getenv("SRV_USER"),":", Sys.getenv("SRV_CLAVE")), .encoding = "UTF-8",
-                      dirlistonly = T, .opts = )),
-      split = "\\n")[[1]])
+      ruta <- stringr::str_replace_all(ruta, " ", "%20")
 
-  resultados <- resultados[!grepl("\\.|\\.\\.", resultados)]
+    }
+
+    resultados <- sort(
+      strsplit(
+        as.vector(
+          RCurl::getURL(url = paste0("sftp://", Sys.getenv("SRV_USER"),"@",Sys.getenv("SRV_IP"),
+                                     "/DataDNMYE/", ruta, "/"),
+                        userpwd = paste0(Sys.getenv("SRV_USER"),":", Sys.getenv("SRV_CLAVE")), .encoding = "UTF-8",
+                        dirlistonly = T, .opts = )),
+        split = "\\n")[[1]])
+
+    resultados <- resultados[!grepl("\\.|\\.\\.", resultados)]
 
 
-  if (full_names) {
-    paste0("/srv/DataDNMYE/", ruta, "/",resultados)
+    if (full_names) {
+      paste0("/srv/DataDNMYE/", ruta, "/",resultados)
 
+    } else {
+      paste0(resultados)
+    }
   } else {
-    paste0(resultados)
-  }
 
+
+
+    if (!is.null(ruta)) {
+
+        ruta <- gsub(x = ruta, pattern = ".*/DataDNMYE/", replacement = "")
+
+        ruta <- gsub(x = ruta, pattern = "//", replacement = "/")
+
+        list.files(glue::glue("/srv/DataDNMYE/{ruta}"),
+                   full.names = full_names)
+
+      } else {
+
+        list.files("/srv/DataDNMYE", full.names = full_names)
+      }
+
+  }
 
 }
 
