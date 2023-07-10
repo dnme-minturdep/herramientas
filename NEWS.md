@@ -1,3 +1,7 @@
+# herramientas 0.0.0.9013
+
+* Mejoro función `herramientas::read_file_srv()`: se puede usar desde server y acepta espacios.
+
 # herramientas 0.0.0.9012
 
 * Mejoro `herramientas::read_file_srv()`: acepta espacios en la ruta de lectura y es fleixible a comenzar o no la ruta con "/", es decir: "/economia/datos.csv" es igual a "economia/datos.csv".

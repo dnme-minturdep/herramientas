@@ -4,10 +4,12 @@
 \alias{ls_srv}
 \title{Listar carpetas y archivos del server:}
 \usage{
-ls_srv(ruta = NULL)
+ls_srv(ruta = NULL, full_names = F)
 }
 \arguments{
-\item{ruta}{Texto con la ruta específica (ej.: "evyth/microdatos/")}
+\item{ruta}{Texto con la ruta específica (ej.: "evyth/microdatos/").}
+
+\item{full_names}{Lógico Indica si devolver la ruta entera del archivo o directorio o solo el nombre del elemento.}
 }
 \description{
 Devuelve un vector con las ubicaciones en la ruta indicada dentro de /srv/DataDNMYE/.
