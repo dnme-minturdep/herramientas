@@ -28,10 +28,10 @@ ls_srv <- function(ruta = NULL, full_names = F) {
           RCurl::getURL(url = paste0("sftp://", Sys.getenv("SRV_USER"),"@",Sys.getenv("SRV_IP"),
                                      "/DataDNMYE/", ruta, "/"),
                         userpwd = paste0(Sys.getenv("SRV_USER"),":", Sys.getenv("SRV_CLAVE")), .encoding = "UTF-8",
-                        dirlistonly = T, .opts = )),
+                        dirlistonly = T)),
         split = "\\n")[[1]])
 
-    resultados <- resultados[!grepl("\\.|\\.\\.", resultados)]
+    resultados <- resultados[!resultados %in% c(".","..")]
 
 
     if (full_names) {
