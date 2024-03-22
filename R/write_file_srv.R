@@ -26,19 +26,19 @@ write_file_srv <- function(x, ruta, ...) {
 
     if(Sys.info()["nodename"] != "dev-rstudio-vra-ubuntu") {
 
-      check <- paste0("/srv/DataDNMYE/", ruta) %in% herramientas::ls_srv(sub("/[^/]+$", "", ruta))
+      # check <- paste0("/srv/DataDNMYE/", ruta) %in% herramientas::ls_srv(sub("/[^/]+$", "", ruta))
+      #
+      # if (check == TRUE) {
+      #
+      #   user_response <- readline(prompt="El archivo ya existe. Desea sobreescribirlo? (si/no): ")
+      #
+      # } else {
+      #
+      #   user_response <- "si"
+      #
+      # }
 
-      if (check == TRUE) {
-
-        user_response <- readline(prompt="El archivo ya existe. Desea sobreescribirlo? (si/no): ")
-
-      } else {
-
-        user_response <- "si"
-
-      }
-
-      if (user_response == "si") {
+      #if (user_response == "si") {
 
         temp_file <- tempfile()
 
@@ -76,29 +76,30 @@ write_file_srv <- function(x, ruta, ...) {
 
         message("Escritura realizada")
 
-      } else {
-
-        message("Escritura cancelada")
-
-      }
+      # }
+      # else {
+      #
+      #   message("Escritura cancelada")
+      #
+      # }
 
     } else {
 
       ruta <- paste0("/srv/DataDNMYE/",ruta)
 
-      check <- file.exists(ruta)
+      # check <- file.exists(ruta)
+      #
+      # if (check == TRUE) {
+      #
+      #   user_response <- readline(prompt="El archivo ya existe. Desea sobreescribirlo? (si/no): ")
+      #
+      # } else {
+      #
+      #   user_response <- "si"
+      #
+      # }
 
-      if (check == TRUE) {
-
-        user_response <- readline(prompt="El archivo ya existe. Desea sobreescribirlo? (si/no): ")
-
-      } else {
-
-        user_response <- "si"
-
-      }
-
-      if (user_response == "si") {
+      #if (user_response == "si") {
 
 
         if (ext == "csv") {
@@ -132,11 +133,13 @@ write_file_srv <- function(x, ruta, ...) {
         }
         message("Escritura realizada")
 
-      } else {
+      #}
 
-        message("Escritura cancelada")
-
-      }
+      # else {
+      #
+      #   message("Escritura cancelada")
+      #
+      # }
 
     }
 
